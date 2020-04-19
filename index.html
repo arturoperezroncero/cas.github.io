@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Arturo Pérez Roncero</title>
+<link rel="icon" href="demo_icon.jpg" type="image/jpg" sizes="16x16"> 
+<link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet"> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
+}
+
+.sidebar {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+
+
+/* Header/logo Title */
+.header {
+  padding: 15%;
+  text-align: center;
+  /*background: #FF5B5E;*/
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 100px;
+}
+
+.header p {
+  font-size: 30px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 14px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column
+.side {
+  -ms-flex: 20%;
+  flex: 20%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+    <h2>No, for real, who am I?</h2>
+    <p>I enjoy human activities such as breathing, eating, and pursuing my meaningless dreams.</p>
+    <h3>Other interests</h3>
+    <div class="fakeimg" style="height:60px;">Scientific Software</div><br>
+    <div class="fakeimg" style="height:60px;">Videogame development</div><br>
+    <div class="fakeimg" style="height:60px;">Science Fiction</div>
+    <div class="fakeimg" style="height:60px;">Music</div>
+    <div class="fakeimg" style="height:60px;">Badminton</div>
+    <div class="fakeimg" style="height:60px;">Making crappy websites</div>
+
+/* Main column */
+.main {   
+  -ms-flex: 100%; /* IE10 */
+  flex: 100%;
+  background-color: white;
+  padding: 60px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+<div style="background-image: url('mande.png');">
+
+<div class="header">
+  <h1>Arturo Pérez Roncero's hub</h1>
+</div>
+
+<div class="navbar">
+  <div id="mySidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <a href="#anchor1"></a>
+  <a href="#anchor1" style="text-align:left;">Scientific Software</a>
+  <a href="#anchor2" style="text-align:left;">Videogame Development</a>
+  <a href="#anchor3" style="text-align:left;">Science Fiction</a>
+  <a href="#anchor4" style="text-align:left;">Music</a>
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
+</div>
+
+<script>
+function openNav() {
+  document.getElementById("mySidebar").style.width = "200px";
+  document.getElementById("main").style.marginLeft = "200px";
+}
+
+function closeNav() {
+  document.getElementById("mySidebar").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+}
+</script>
+</div>
+
+<div class="row">
+  <div class="side">
+  </div>
+  <div class="main">
+    <h2 id="anchor1"></h1>
+    <h1><big><big><big>Scientific Software</big></big></big></h1>
+    <h2><big>Interplanetary Superhighway</big></h2>
+    <div style="text-align:center;">
+    <img src="lagrangianos.png" alt="Lagrangian Points" width="100%">
+    </div>
+    <h3>What is it?</h3>
+    <p>The Interplanetary Superhighway (IPS) is a set of pathways beetween planets and other bodies which require very little energy to pass through. They are delimited by the manifold created by every asymptotic trajectory which ends up in a halo orbit around one of the orbits. The Lagrangian points, the points where an object will maintain its position relative to other two much bigger objects, determine the gates beetween the pathways collected in the IPS. This is no coincidence, as halo orbits always have as centre of their trajectories the Lagrangian points L1 or L2.</p>
+    <h3>How to find it</h3>
+    <p>In order to calculate the IPS I first created a plane, where I placed the Earth (Blue sphere) and the Sun (Yellow sphere). I then recreated the three-body problem, or in other words, simulated the behaviour of the Sun, Earth and a third object. By assuming this third object had a negligible mass orbiting the sun at an angular velocity equal to Earth’s, and then changing its position to every possible point in the plane, I was able to graph the effective potential on said plane (white equipotential lines). This showed me the “gates” between planets, or Lagrangian points as I said earlier.</p>
+    <p>For a better understanding of the Lagrangian points, I placed 5 objects (Green spheres) on each of the points. Its trajectories are showed in red. The Lagrangian points L1 and L2 (the ones closest to the Earth) resulted in much more unstable trajectories around both the Sun and the Earth than the points L3, L4 and L5. However, although a bit calmer, the orbits of objects placed on L3 were still more unstable than those on L4 and L5.</p>
+    <p>My research on the topic is still in progress, but I will make sure to update my latest findings.</p>
+    <br>
+    
+    <h2><big>The Millennium Run</big></h2>
+    <h3>What is it?</h3>
+    <div style="text-align:center;">
+    <video width="100%" controls>
+    <source src="MR.mp4" type="video/mp4">
+    </video>
+    </div>
+    <p>The so called "Millennium Run" was a computer N-body simulation (a simulation of the behaviour of "N" particles under the influence of a certain force). Its goal was to find out how the universe evolved with time. Its results reinforced the Big Bang theory, closely resembling the Cosmological Background Radiation (CBR).</p>
+    <h3>How to make it</h3>
+    <p>I first tried simulating it using After Effects, which has a built in gravitational simulation. By modifying the default parameters and colors, I ended up with similar results.</p>
+    <p>I then decided to code the whole myself, and procedeed to write a gravitational simulator from scratch (Video on the right). I used 20,000 particles, instead of the over 13 billion the latest Millennium Run did, so my computer wouldn't collapse into a singularity. Still, the results were similar. At the very beginning we see a structure similar to that in the CBR, which later becomes a sort of net connecting big chunks of particles (like in the Millennium Run). Lastly, all the particles join in very big blobs, a possible future for our own universe.</p>
+    <p>I developed a 3D version too.</p>
+
+    <video width="45%" controls>
+    <source src="2.mp4" type="video/mp4">
+    </video>
+    <video width="45%" controls>
+    <source src="3.mp4" type="video/mp4">
+    </video>
+
+    <h2><big>Electromagnetic simulators</big></h2>
+    <h3>Electric force simulator</h3>
+    <p>I started with the basics, simulating the Coulomb force, and then plotting it onto a plane. I then simulated different experiments: two positive charges approaching (on the left), or one positive and one negative (on the right).</p>
+
+    <video width="45%" controls>
+    <source src="a.mp4" type="video/mp4">
+    </video>
+    <video width="45%" controls>
+    <source src="b.mp4" type="video/mp4">
+    </video>
+
+    <p>I developed a field line plotter too.</p>
+
+    <div style="text-align:center;">
+    <img src="lines.png" alt="Field lines" width="100%">
+    </div>
+
+    <p>Finally, I tried plotting the equipotential lines of two colliding dipoles.</p>
+
+    <video width="49%" controls>
+    <source src="c.mp4" type="video/mp4">
+    </video>
+    <video width="49%" controls>
+    <source src="d.mp4" type="video/mp4">
+    </video>
+
+    <h3>Lorentz force simulator</h3>
+    <p>I became more and more interested in magnetism, after learning that it was, in fact, a relativistic consequence of the movement of charges. Trying to understand it, I coded a program which simulated the behaviour of particles (both positive and negative) approaching a magnetic dipole. The charge of the particles is randomly assigned, and the dipole is represented as a blues sphere, trying to mimic solar winds hitting Earth. The camera is rotating around Earth along one of its meridians.</p>
+
+    <div style="text-align:center;">
+    <video width="100%" controls>
+    <source src="e.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <h3>Clifford Attractor</h3>
+    <p>After finding out about attractors, I became more and more interested on differential equations. It doesn't matter if you believe in adeterministic or in a indeterministic universe, chaos theory contributes to everybody's view of reality, and so it did to me. I started studying and messing with it on my own, beginning with the Clifford attractor.</p>
+    <p>As Paul Bourke explains on this website: <a href="http://paulbourke.net/fractals/clifford/">http://paulbourke.net/fractals/clifford/</a>, the Clifford attractor, named after Clifford Pickover, is described by the following set of differential equations:</p>
+    <p>xn+1 = sin(a yn) + c cos(a xn)</p>
+    <p>yn+1 = sin(b xn) + d cos(b yn)</p>
+    <p>Where a, b, c, d are variables that define each attractor. </p>
+    <p>I then coded a simulator, which returned results as the following:</p>
+    <div style="text-align:center;">
+    <img src="clif.png" alt="Clifford Attractor" width="100%">
+    </div>
+
+    <h3>Lorenz Attractor</h3>
+    <p>The Lorenz Attractor is a system of 3 partial differential equations, developed by Edward Lorenz in the 20th century. It defines the properties of a two-dimensional fluid uniformly heated from below and cooled from above. It is perhaps the most famous example of deterministic chaos, and it was not long before I got my hands on it. Here are the results:</p>
+    <div style="text-align:center;">
+    <img src="lor.png" alt="Clifford Attractor" width="100%">
+    </div>
+
+    <h3>Mandelbrot Set</h3>
+    <p>I also tried simulating the Mandelbrot Set. If we iterate f(z)=z^2+c, the first term being a complex number equivalent to the coordinates in a 2-D plane, the resulting progression will converge or diverge. If we then colour the pixels which result in converging progressions, and them zoom on it as much as our non-super computer allows us, we will get something like this:</p>
+    <div style="text-align:center;">
+    <video width="100%" controls>
+    <source src="Mandelbrot.mp4" type="video/mp4">
+    </video>
+    </div>
+
+    <h3>Stellar Evolution</h3>
+    <p>A long, long time ago, in this galaxy, I decided to develop an app explaining the different paths a star could take depending on its mass. This was my first big project, and it took me months to finish. I was around 13, and was still learning programming, so don't expect too much. The app is still up on Google Play, and you can download it 
+    <a href="https://play.google.com/store/apps/details?id=stellar.evolution&hl=es_419">here</a>. In case you don't want to, here are some snapshots and the trailer:</p>
+
+    <img src="captura1.png" alt="captura1" width="32%">
+    <img src="captura2.png" alt="captura2" width="32%">
+    <img src="captura3.png" alt="captura3" width="32%">
+    <img src="captura4.png" alt="captura4" width="32%">
+    <img src="captura5.png" alt="captura5" width="32%">
+    <img src="captura6.png" alt="captura6" width="32%">
+
+    <div style="text-align:center;">
+    <video width="100%" controls>
+    <source src="trailer.mp4" type="video/mp4">
+    </video>
+    </div>
+
+
+    <h2 id="anchor2"></h1>
+    <h1><big><big><big>Videogame Development</big></big></big></h1>
+    <h2><big>The Clone Wars</big></h2>
+    <div style="text-align:center;">
+    <img src="banner.png" alt="tcw" width="100%">
+    </div>
+    <p>A year ago I had the idea of developing a video game. I started working from scratch. After a couple of weeks I had all the main ideas clear: The game would be Star Wars themed, and its main goal would be to interact withfour different factions with opposing interests. Different characters would ask you questions or make demands,and depending on the answer you gave them, their satisfaction level would increase or decrease. If it reached its maximum or minimum, you lost the game. It released for Android on New Year's Eve, and in less than two months it got more than two thousand downloads.</p>
+    <p>It is currently anavailable on Play Store, but a copy of the APK can be found here:</p>
+    <a href="TheCloneWars.apk" download="TheCloneWars_Arturo">
+    <img src="TheCloneWars.apk" alt="The Clone Wars" width="104" height="142">
+    </a>
+    <p>In case you don't want to do that, here are some snapshots and the trailer, again:</p>
+    <div style="text-align:center;">
+    <video width="100%" controls>
+    <source src="tcw.mp4" type="video/mp4">
+    </video>
+    </div>
+    <img src="app1.png" alt="1" width="49%">
+    <img src="app2.png" alt="2" width="49%">
+    <img src="app3.png" alt="3" width="32%">
+    <img src="app5.png" alt="4" width="32%">
+    <img src="app6.png" alt="5" width="32%">
+    <img src="app7.png" alt="6" width="32%">
+    <img src="app8.png" alt="7" width="32%">
+    <img src="app10.png" alt="8" width="32%">
+
+    <h2><big>Evolution</big></h2>
+    <p>I had this idea of doing a game where you started playing as some species, and slowlly evolved into others, ending up in existing animals nowadays. That is basically what I ended up doing. In "Evolution" you can play as dinasaurs, seagulls, and worst of all: humans.</p>
+    <div style="text-align:center;">
+    <video width="100%" controls>
+    <source src="Evolution.mp4" type="video/mp4">
+    </video>
+    </div>
+    <p>It is currently available on <a href="https://play.google.com/store/apps/details?id=evolution.arturo">Play Store.</a></p>
+
+    <h2><big>Kill Sebas</big></h2>
+    <p>The name speaks for itself.</p>
+    <div style="text-align:center;">
+    <video width="100%" controls>
+    <source src="KillSebas.mp4" type="video/mp4">
+    </video>
+    </div>
+    <p>It is currently available on <a href="https://play.google.com/store/apps/details?id=kill.sebas">Play Store.</a></p>
+
+    <h2 id="anchor3"></h1>
+    <h1><big><big><big>Science Fiction</big></big></big></h1>
+    <h2><big>Visual Arts</big></h2>
+    <div style="text-align:center;">
+    <img src="def.png" alt="tcw" width="100%">
+    </div>
+    <h3>Ramake of Michael Stearns work, using Blender.</h3>
+    <div style="text-align:center;">
+    <video width="100%" controls>
+    <source src="rebels.mp4" type="video/mp4">
+    </video>
+    </div>
+    <h3>Made with Blender.</h3>
+
+    <h2 id="anchor4"></h1>
+    <h1><big><big><big>Music</big></big></big></h1>
+    <h2><big>Drums</big></h2>
+    <h3>Excerpt of me playing "Banquet" by Bloc Party.</h3>
+    <div style="text-align:center;">
+    <video width="100%" controls>
+    <source src="drumsDef2.mp4" type="video/mp4">
+    </video>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <h2>Thanks for reading</h2>
+</div>
+</body>
